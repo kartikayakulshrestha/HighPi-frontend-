@@ -5,10 +5,13 @@ import img from "../assets/preview.webp";
 import { RiFacebookBoxFill } from "react-icons/ri";
 import { FaGoogle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import {useDispatch} from "react-redux";
+import { theemail } from "../redux/counter/counterSlice";
 const Login = () => {
   const [email, setemail] = useState("");
   const [password, setpass] = useState("");
   const navigate=useNavigate()
+  const dispatch = useDispatch()
   const validateEmail = (email) => {
     return String(email)
       .toLowerCase()
@@ -31,10 +34,11 @@ const Login = () => {
         alert("wrongpassword")
       }else if(res.data.message==="nouser"){
         alert("Do not exist")
-        return navigate("/signin")
+        return navigate("/signup")
       }else if(res.data.message==="pleaseverify"){
         alert("you are not verified user, please sign in or check the mail")
-        return navigate("/signin")
+        dispatch(theemail(email))
+        return navigate("/verify")
       }
     } catch (err) {
       alert("error",err)

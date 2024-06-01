@@ -16,8 +16,8 @@ const Navbar = () => {
           </div>
           {/* Navigation links */}
           <div className="hidden md:flex gap-10 text-xl space-x-4">
-            <a href="#" className=" hover:text-gray-300">Home</a>
-            <a href="#" className=" hover:text-gray-300">Services</a>
+            <a href="/" className=" hover:text-gray-300">Home</a>
+            <a href="/home" className=" hover:text-gray-300">Become Creative</a>
             <a href="#" className=" hover:text-gray-300">About</a>
             <a href="#" className=" hover:text-gray-300">Contact</a>
           </div>
@@ -40,7 +40,7 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div className="md:hidden mt-4">
         <div className={`flex flex-col space-y-2 ${flag===1?'':'hidden'}`}>
-          <a href="#" className=" hover:text-gray-300">Home</a>
+          <a href="/home" className=" hover:text-gray-300">Home</a>
           <a href="#" className=" hover:text-gray-300">Services</a>
           <a href="#" className=" hover:text-gray-300">About</a>
           <a href="#" className=" hover:text-gray-300">Contact</a>
